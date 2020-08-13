@@ -241,7 +241,10 @@ export default function Bridge(props){
        const temp = [];
        for (var i = prevLength; i < newLength ; i++){
            const event = _ERC721events[i];
-           temp.push({"flowAddress": event._flowAddress, "ethereumTokenID": event._tokenID.toNumber()});
+           // TODO: how to handle reminting
+           if(event._received){
+              temp.push({"flowAddress": event._flowAddress, "ethereumTokenID": event._tokenID.toNumber()});
+           }
        }
 
        setMintingTasks(mintingTasks => [...mintingTasks, ...temp]);
