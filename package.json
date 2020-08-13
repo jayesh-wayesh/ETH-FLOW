@@ -1,0 +1,55 @@
+{
+  "name": "@uniswap-v1-app/monorepo",
+  "version": "1.0.0",
+  "keywords": [
+    "ethereum",
+    "react",
+    "uniswap",
+    "workspaces",
+    "yarn"
+  ],
+  "private": true,
+  "scripts": {
+    "react-app:build": "yarn workspace @uniswap-v1-app/react-app build --max-old-space-size=12288",
+    "react-app:eject": "yarn workspace @uniswap-v1-app/react-app eject",
+    "react-app:start": "yarn workspace @uniswap-v1-app/react-app start",
+    "react-app:test": "yarn workspace @uniswap-v1-app/react-app test",
+    "ship": "echo 'Sorry, this does not work yet'",
+    "build": "yarn workspace @uniswap-v1-app/react-app build --max-old-space-size=12288",
+    "chain": "cd packages/buidler && npx buidler node",
+    "node": "cd packages/buidler && npx buidler node",
+    "test": "cd packages/buidler && npx buidler test",
+    "start": "yarn workspace @uniswap-v1-app/react-app start",
+    "compile": "cd packages/buidler && npx buidler compile",
+    "deploy": "cd packages/buidler && npx buidler run scripts/deploy.js && npx buidler run scripts/publish.js",
+    "watch": "cd packages/buidler && node scripts/watch.js",
+    "accounts": "cd packages/buidler && npx buidler accounts",
+    "balance": "cd packages/buidler && npx buidler balance",
+    "send": "cd packages/buidler && npx buidler send",
+    "dev:emulator": "flow emulator start -v --http-port 8080 -p 3570",
+    "dev:wallet": "PK=5e967c6c6370b4b243d107794f6096cc346415142eacb72ed64ccfee4e4ae8f5 && fcl-wallet"
+  },
+  "devDependencies": {
+    "@nomiclabs/buidler": "1.3.3-rc.0",
+    "@nomiclabs/buidler-truffle5": "1.3.3-rc.0",
+    "@nomiclabs/buidler-web3": "1.3.3-rc.0"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "packages/songs-explorer/@graphprotocol/graph-ts",
+      "packages/songs-explorer/@graphprotocol/graph-ts/**"
+    ]
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "^0.18.0",
+    "@onflow/fcl": "^0.0.46",
+    "@onflow/sdk": "^0.0.30",
+    "@onflow/types": "^0.0.3",
+    "@openzeppelin/contracts": "^3.1.0",
+    "react-router-dom": "^5.2.0",
+    "web3": "^1.2.11"
+  }
+}

@@ -1,0 +1,26 @@
+.waitlist {
+    font-family: monospace;
+    font-size: x-large;
+    position: fixed;
+    width: 200px;
+    right: 15%;
+    top: 1%;   
+  }
+  
+  .flowaddress {
+    font-family: monospace;
+    font-size: x-large;
+    position: fixed;
+    width: 200px;
+    left: 15%;
+    top: 1%;   
+  }
+  
+  .transactions{
+    font-family: monospace;
+    font-size: x-large;
+    position: fixed;
+    width: 200px;
+    left: 15%;
+    bottom: 1%;   
+  }
